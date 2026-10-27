@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Quiz - Interactive Quiz Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <section id="welcome-screen" class="screen active">
+        <div class="quiz-card">
+            <div class="app-header">
+                <div class="logo">✨</div>
+                <h1>Welcome to <span class="brand">Web Quiz</span></h1>
+                <p class="subtitle">Test your knowledge of software engineering.</p>
+            </div>
+
+            <div class="quiz-info">
+                <div class="info-item">
+                    <span class="info-number">5</span>
+                    <span class="info-label">Questions per Quiz</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-number">Multiple Choice</span>
+                    <span class="info-label">Format</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-number">Instant</span>
+                    <span class="info-label">Results</span>
+                </div>
+            </div>
+
+            <div class="categories">
+                <h3 class="section-title">Choose a Category</h3>
+                <div class="category-grid">
+                    <div class="category-item" data-category="HTML">
+                        <span class="cat-icon">🌐</span>
+                        <span class="cat-name">HTML</span>
+                    </div>
+                    <div class="category-item" data-category="CSS">
+                        <span class="cat-icon">🎨</span>
+                        <span class="cat-name">CSS</span>
+                    </div>
+                    <div class="category-item" data-category="JavaScript">
+                        <span class="cat-icon">⚡</span>
+                        <span class="cat-name">JavaScript</span>
+                    </div>
+                    <div class="category-item" data-category="TypeScript">
+                        <span class="cat-icon">📘</span>
+                        <span class="cat-name">TypeScript</span>
+                    </div>
+                    <div class="category-item" data-category="Web Dev">
+                        <span class="cat-icon">🖥️</span>
+                        <span class="cat-name">Web Dev</span>
+                    </div>
+                    <div class="category-item" data-category="DevOps">
+                        <span class="cat-icon">🚀</span>
+                        <span class="cat-name">DevOps</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="average-card">
+                <h3 class="section-title">All-Time Performance</h3>
+                <div class="average-display">
+                    <span id="average-value" class="average-value">--%</span>
+                    <span id="average-label" class="average-label">Average score across quizzes taken</span>
+                </div>
+                <p id="average-count" class="average-count">No quizzes completed yet.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Screen -->
+    <section id="quiz-screen" class="screen hidden">
+        <div class="quiz-card">
+            <header class="quiz-header">
+                <div id="category-badge" class="category-badge">Web Development Quiz</div>
+                <div class="score-display">Score: <span id="score-value">0</span></div>
+            </header>
+
+            <div class="progress-wrapper">
+                <p id="progress-text" class="progress-text">Question 01 / 05</p>
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div id="question-text" class="question-text">What does HTML stand for?</div>
+
+            <div id="options-container" class="options"></div>
+
+            <div id="feedback" class="feedback"></div>
+
+            <div class="button-row">
+                <button id="submit-btn" class="btn btn-primary">Submit Answer</button>
+                <button id="next-btn" class="btn btn-secondary" disabled>Next →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Screen -->
+    <section id="results-screen" class="screen hidden">
+        <div class="quiz-card results-card">
+            <div class="results-header">
+                <div class="trophy">🏆</div>
+                <h2>Quiz Result</h2>
+                <p class="result-title">Congratulations!</p>
+            </div>
+
+            <div class="score-display-large">
+                <span id="final-score" class="final-score">0</span>
+                <span class="score-slash">/</span>
+                <span class="score-total">5</span>
+            </div>
+
+            <div id="final-percentage" class="final-percentage">0%</div>
+
+            <p id="result-message" class="result-message">Excellent Work!</p>
+
+            <div class="average-card results-average">
+                <span id="results-average-label" class="average-label">Your All-Time Average</span>
+                <span id="results-average-value" class="average-value">--%</span>
+            </div>
+
+            <div class="button-row results-buttons">
+                <button id="share-btn" class="btn btn-outline">Share Results</button>
+                <button id="new-quiz-btn" class="btn btn-primary">New Quiz</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
